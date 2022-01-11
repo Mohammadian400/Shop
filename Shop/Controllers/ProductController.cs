@@ -130,7 +130,7 @@ namespace Shop.Controllers
             return Ok(result);
         }
         [HttpGet]
-        public async Task<ProdctViewModel> GetSelectedProduct(long id)
+        public async Task<ActionResult<ProdctViewModel>> GetSelectedProduct(long id)
         {
             var prod = await _context.Products.FindAsync(id);
             //return  _context.Products
@@ -153,7 +153,7 @@ namespace Shop.Controllers
                 Description = prod.Description,
                 CategoryName = prod.Category.CategoryName,
             };
-            return (View);
+            return Ok(View);
         }
         }
 }
