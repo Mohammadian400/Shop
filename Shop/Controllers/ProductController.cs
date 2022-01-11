@@ -126,7 +126,10 @@ namespace Shop.Controllers
                                CategoryName = p.Category.CategoryName
 
                            });
+
+            // run query and get list
             var result = prodcts.ToList();
+
             return Ok(result);
         }
         [HttpGet]
